@@ -1,0 +1,79 @@
+1.1 What does SDLC stand for?
+Software development life cycle
+
+
+1.2 What exception is thrown when you divide a number by 0?
+In python the exception that will be raised when diving by zero is a ‘ZeroDvisionError’.
+
+
+1.3 What is the git command that moves code from the local repository to the remote repository?
+Git push
+
+
+1.4 What does NULL represent in a database?
+NULL represents an absence of any value and can be left blank for any unknown values/values that are yet to be put into the database.
+
+
+1.5 Name 2 responsibilities of the Scrum Master
+One responsibility of the scrum master is to ensure the project is going according to plan and that they are not over/under committing with their plans. Another responsibility of the scrum master is to coach and look after all people working on the project in order for it to run as efficiently as possible.
+
+
+1.6 Name 2 debugging methods, and when you would use them.
+One debugging method is the cause elimination method whereby you first need to reproduce the bug and then systematically isolate the issue to work out possible causes and remove them one by one and continue to do this, therefore finding the cause and eliminating it. This method may be useful when you are not entirely sure where the bug originated in a large code base and it could be from multiple places.
+Another debugging method is called program slicing - this is where the bug relates to one specific element so you isolate this and test all things that relate to this element and essentially split up the program into slices. This is particularly useful if you know what the bug relates to, but not necessarily what has gone wrong.
+
+
+1.7 
+An example of an error that would be thrown in the above example is a ‘TypeError’ which would happen if the type of input for cash given or price was not an integer and instead a string text value e.g. “100” instead of 100. The below exception handling would be used to flag up to the user that the inputs must be numeric so they know what has gone wrong.
+
+
+def can_pay(price, cash_given): 
+try: 
+if cash_given >= price: 
+return True 
+else: 
+return False 
+except TypeError: 
+raise ValueError("All inputs must be numeric")
+
+
+1.8 What is git branching?
+Explain how it is used in Git.
+Github is used as a repository for version control, therefore branching is used to check out pieces of code so that it can be worked on without compromising the code or risking things to be written over. It is essentially like copying the code to be kept separately. Then when you want to merge the branches at the end the differences in the code will be shown so you can see what has changed and what can be added. Branching is also useful for if you want to test something out without it affecting the rest of the code and can be used as a test. 
+In Git you can create branches by starting at the main branch and doing the git branch command to create a new branch. Then you can checkout this branch and make any changes you want to, then to add this back into the main branch using git merge, where your changes can be reviewed and added.
+
+
+1.9 Design a restaurant ordering system.
+
+
+You do not need to write code, but describe a high
+-
+level approach:
+
+
+a.
+Draw a list of key requirements
+* Table authentication - you need to be able to select what table you are at so that the food will be delivered to the correct table
+* Menu management - this should allow staff to create new dishes, be able to update if they are out of stock and delete items that they no longer with to sell.
+* Order management - the user should be able to add items from the menu to their basket and remove them if they change their mind
+* Payment - The price should be generated and they should have a screen that asks for the debit card details and allows them to pay.
+* Order tracking - an order number should be generated on completing and they should receive a time that the food should be ready by.
+
+
+b.
+What are your main considerations and problems?
+Considerations:
+* The app should be user friendly and intuitive, eg. the organisation of food should have all curry's together, all sides together, all starters together.
+* The user should be able to easily change their mind before processing and add notes/be able to select easily if they have allergens or things to be removed.
+* The payment process should be secure and ensure there is no risk that customers details could be stolen.
+   Problems:
+* The time food is predicted to arrive should be realistic so as not to make customers believe it is arriving faster.
+* If the menu is not updated regularly users may miss out on specials or order items that we do not have in stock
+* Customers may think they have ordered already once items are select rather than following on to the payment page and putting in their details as this may be the custom in some restaurants.
+
+c.
+What components or tools would you potentially use?
+* Frontend - using HTML and CSS to make the page appear attractive ot the user
+* Backend - use python to do majority of the coding in the backend to set it up including apis for a connection to the database and the payment gateway.
+* Database - the menu and the orders should be kept in a database with multiple tables
+* Payment gateway - this is how the payment screen is setup so it is secure
